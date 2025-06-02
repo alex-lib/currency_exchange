@@ -3,7 +3,10 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import ru.back.currency.exchange.dto.CurrencyDto;
-import ru.back.currency.exchange.service.CurrencyService;
+import ru.back.currency.exchange.responses.CurrencyResponse;
+import ru.back.currency.exchange.services.CurrencyService;
+import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequiredArgsConstructor
@@ -24,5 +27,10 @@ public class CurrencyController {
     @PostMapping("/create")
     ResponseEntity<CurrencyDto> create(@RequestBody CurrencyDto dto) {
         return ResponseEntity.ok(service.create(dto));
+    }
+
+    @GetMapping(value = "/")
+    ResponseEntity<Map<String, List<CurrencyResponse>>> getAll() {
+        return ResponseEntity.ok(service.getAll());
     }
 }

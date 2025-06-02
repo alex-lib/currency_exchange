@@ -1,3 +1,7 @@
+cbrf:
+  api:
+    getInfo: https://cbr.ru/scripts/XML_daily.asp
+
 server:
   port: 8080
 
@@ -11,8 +15,8 @@ spring:
   datasource:
     driver-class-name: org.postgresql.Driver
     url: jdbc:postgresql://localhost:5432/postgres
-    username: root
-    password: root
+    username: postgres
+    password: 3101
   jpa:
     properties:
       hibernate:
@@ -20,4 +24,3 @@ spring:
         show_sql: true
         hbm2ddl:
           auto: none
-

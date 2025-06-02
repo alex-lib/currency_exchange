@@ -15,5 +15,13 @@
             <column name="iso_num_code" type="bigint"/>
         </createTable>
     </changeSet>
+    
+    <changeSet id="addColumnIsoCharCode" author="root">
+        <addColumn tableName="currency">
+                <column name="iso_char_code" type="varchar(255)">
+                    <constraints nullable="true"/>
+            </column>
+        </addColumn>
+    </changeSet>
 
 </databaseChangeLog>
